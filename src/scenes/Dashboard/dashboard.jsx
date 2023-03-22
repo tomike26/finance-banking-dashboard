@@ -58,6 +58,7 @@ const TransactionItem = ({ icon, title, date, cardNumber, amount, status }) => {
 const StatItem = ({ icon, rating, title }) => {
   return (
     <div className='stat-item'>
+      
       <img src={icon} alt={title} />
       <div>
         <h2>{rating}</h2>
@@ -66,7 +67,7 @@ const StatItem = ({ icon, rating, title }) => {
     </div>
   );
 };
-export const recentTranscationObj =
+export const recentTranscation =
   [
     {
       icon: "/images/bitcoin.jpg",
@@ -77,7 +78,7 @@ export const recentTranscationObj =
       status: "success"
     },
     {
-      icon: "/images/Profile-image.jpg",
+      icon: "/images/image1.jpg",
       title: "Sent to anitonia",
       date: "Jan 16, 2010",
       cardNumber: "****87212",
@@ -93,7 +94,7 @@ export const recentTranscationObj =
       status: "success"
     }
   ]
-export const statisticsObj = [
+export const statistics = [
   {
     icon: "/images/purple-icon.jpg",
     rating: "220k",
@@ -339,7 +340,7 @@ const dashboard = () => {
               <h4>Recent Transaction</h4>
               <p>View all</p>
             </div>
-            {recentTranscationObj.map((item, i) => {
+            {recentTranscation.map((item, i) => {
               return (
                 <TransactionItem
                   key={i}
@@ -357,7 +358,7 @@ const dashboard = () => {
             <div className="stat-wrapper">
               <h2>Statistics</h2>
               <div className='stat'>
-                {statisticsObj.map((item, i) => {
+                {statistics.map((item, i) => {
                   return (
                     <StatItem
                       key={i}
