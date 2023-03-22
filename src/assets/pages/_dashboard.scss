@@ -1,0 +1,214 @@
+.dashboard-section {
+    display: flex;
+    gap: 32px;
+
+    .dashboard-card {
+        background: #0177FB;
+        color: white;
+        border-radius: 12px;
+        padding: 15px;
+        // height: 15vh;
+    }
+
+    .dashboard-card-details {
+        font-size: 9px;
+        margin-bottom: -12px;
+
+    }
+
+    .dashboard-card-details-name {
+        font-size: 13px;
+    }
+
+    .dashboard-card-number {
+        padding-top: 30px;
+        font-size: 10px;
+        margin-bottom: -1px;
+    }
+
+    .dashboard-card-profile {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 9px;
+
+    }
+
+    .send-money-section {
+        display: flex;
+        justify-content: space-between;
+        background: #FFFFFF;
+        box-shadow: 0px 10.9688px 21.9375px rgba(122, 122, 122, 0.2);
+        padding: 5px 10px 5px 17px;
+        border-radius: 12px;
+    }
+
+    .select-card {
+        display: flex;
+        justify-content: space-between;
+        border: 0;
+        border-color: none;
+    }
+
+    .amount-section {
+        background: #FFFFFF;
+        box-shadow: 0px 10.9688px 21.9375px rgba(118, 118, 118, 0.2);
+        border-radius: 10px;
+        margin-top: 20px;
+    }
+
+    .amount-label {
+        font-size: 9px;
+        color: #000000;
+
+    }
+
+    .send-money-button {
+        background: #0177FB;
+        color: white;
+        text-align: center;
+        width: 100%;
+        border-radius: 16px;
+        padding: 15px;
+        margin-top: 20px;
+
+    }
+
+    .send-money-button:hover {
+        background: #0177FB;
+
+    }
+
+
+    .profile-details {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .profile-name {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .profile-icon {
+            background: #DFF3FE;
+            color: #0177FB;
+            border-radius: 50%;
+            height: 20px;
+            width: 20px;
+            text-align: center;
+        }
+
+
+    }
+
+    .quick-transfer-section {
+        border: 0.566969px solid #E8E8E8;
+        padding: 5px 10px 5px 17px;
+        border-radius: 6px;
+        margin-top: 22px;
+    }
+
+    .quick-transfer {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .quick-more-icons {
+        display: flex;
+        gap: 10px;
+        justify-content: space-around;
+        text-align: center;
+        margin-bottom: 30px;
+
+        p {
+            font-size: 9.50625px;
+            color: #798BA3;
+
+        }
+
+        .more-icons {
+            border: 0.73125px solid #F2F2F2;
+            padding: 12px;
+            border-radius: 7px;
+            width: 40px;
+            margin-top: 16px;
+        }
+    }
+
+    .recent-contact-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+
+    }
+
+    .recipient-text {
+        font-size: 11;
+        color: #7D8DA6;
+        margin-top: -5px;
+    }
+
+    .recent-contact-icon {
+        display: flex;
+        gap: 25px;
+    }
+
+    .contact-image {
+        width: 50%;
+        object-fit: contain;
+    }
+
+    .recent-contact-forward {
+        color: #C1C1C1;
+        margin-top: 10px;
+    }
+
+    .image-stack {
+        margin-top: 20px;
+    }
+
+    .recent-contact-group {
+        background: #FFFFFF;
+        box-shadow: 0px 3.65625px 16.8187px rgba(0, 0, 0, 0.06);
+        border-radius: 8px;
+        padding: 13px 17px;
+        margin-top: 23px;
+
+        .recent-image {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+  .group-image {
+      display: flex;
+      gap: 40px;
+      margin-top: 12px;
+  }
+        .recent-contact-number {
+            border: 0.73125px dashed #DDE5F0;
+            width: 26.33px;
+            height: 26.33px;
+            font-size: 11px;
+            border-radius: 50%;
+            line-height: 13px;
+            color: #0176FA;
+            text-align: center;
+        }
+
+        .recent-contact-name {
+            font-size: 11.7px;
+            line-height: 14px;
+            color: #131635;
+            padding-bottom: 0;
+        }
+
+        .recent-contact-amount {
+            font-size: 10px;
+            color: #7D8DA6;
+            margin-top: -10px;
+        }
+    }
+}
