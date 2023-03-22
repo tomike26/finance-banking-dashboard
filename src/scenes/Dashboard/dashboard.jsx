@@ -1,4 +1,5 @@
 import React from 'react';
+import { Typography } from '@mui/material';
 import Box from '@mui/material/Box';
 import Header from '../../components/Header';
 import MenuItem from '@mui/material/MenuItem';
@@ -28,6 +29,92 @@ export const BasicSelect = () => {
     setAge(event.target.value);
   };
 }
+const TransactionItem = ({ icon, title, date, cardNumber, amount, status }) => {
+  return (
+    <Box
+      display='flex'
+      alignItems='center'
+      justifyContent='space-between'
+      m={3}
+    >
+      <Typography
+        variant='p'
+        sx={{
+          display: 'flex',
+          justifyContent: 'center',
+          gap: '10px',
+        }}
+      >
+        <img src={icon} alt={title} />
+        {title}
+      </Typography>
+      <Typography variant='p'>{cardNumber}</Typography>
+      <Typography variant='p'>{date}</Typography>
+      <Typography variant='p'>{amount}</Typography>
+      <p className={status === 'success' ? 'success' : 'pending'}>{status}</p>
+    </Box>
+  );
+};
+const StatItem = ({ icon, rating, title }) => {
+  return (
+    <div className='stat-item'>
+      <img src={icon} alt={title} />
+      <div>
+        <h2>{rating}</h2>
+        <p>{title}</p>
+      </div>
+    </div>
+  );
+};
+export const recentTranscationObj =
+  [
+    {
+      icon: "/images/bitcoin.jpg",
+      title: "Bitcoin Transaction",
+      date: "Jan 16, 2010",
+      cardNumber: "****45242",
+      amount: "-$853.00",
+      status: "success"
+    },
+    {
+      icon: "/images/Profile-image.jpg",
+      title: "Sent to anitonia",
+      date: "Jan 16, 2010",
+      cardNumber: "****87212",
+      amount: "-$153.00",
+      status: "pending"
+    },
+    {
+      icon: "/images/paypal.jpg",
+      title: "Withdraw Paypal",
+      date: "Jan 16, 2020",
+      cardNumber: "****36275",
+      amount: "+$223.00",
+      status: "success"
+    }
+  ]
+export const statisticsObj = [
+  {
+    icon: "/images/purple-icon.jpg",
+    rating: "220k",
+    title: "customers"
+  },
+  {
+    icon: "/images/blue-icon.jpg",
+    rating: "220k",
+    title: "Remittance"
+  },
+  {
+    icon: "/images/green-icon.jpg",
+    rating: "220k",
+    title: "Donation"
+  },
+  {
+    icon: "/images/yellow-icon.jpg",
+    rating: "220k",
+    title: "watchtime"
+  },
+]
 const dashboard = () => {
 
   return (
@@ -214,7 +301,7 @@ const dashboard = () => {
                 <ArrowForwardIosIcon sx={{ fontSize: "medium" }} className='recent-contact-forward' />
               </Stack>
               <div className='recent-contact-group'>
-                <p sx={{ color: "#cccccc" }}>Group <span style={{ color:"#7D8DA6" }}>Party</span> </p>
+                <p sx={{ color: "#cccccc" }}>Group <span style={{ color: "#7D8DA6" }}>Party</span> </p>
                 <div className='recent-image'>
                   <div class="group-image">
                     <div>
@@ -227,18 +314,16 @@ const dashboard = () => {
                     </div>
                   </div>
                   <div>
-                  </div>
-                  <div>
                     <MarkChatUnreadIcon sx={{ color: '#C1C1C1' }} />
                   </div>
                 </div>
                 <div className='recent-image'>
-                
+
                   <div style={{
-                    display: "flex", gap:"40px",alignItems: 'center'
+                    display: "flex", gap: "40px", alignItems: 'center'
                   }}>
                     <img src="/images/image.jpg" alt="Master Card" />
-                    <div>
+                    <div className='recent-contact'>
                       <p className='recent-contact-name'>Dakota Milk</p>
                       <p className='recent-contact-amount'>$ 420.00</p>
                     </div>
@@ -249,10 +334,42 @@ const dashboard = () => {
               </div>
             </Box>
           </Box>
-
-          <p>Recent Transaction</p>
-          <p>Recent Transaction</p>
-
+          <div className='recent-transaction' >
+            <div className='recent-transaction-heading' m={3}>
+              <h4>Recent Transaction</h4>
+              <p>View all</p>
+            </div>
+            {recentTranscationObj.map((item, i) => {
+              return (
+                <TransactionItem
+                  key={i}
+                  icon={item.icon}
+                  title={item.title}
+                  date={item.date}
+                  cardNumber={item.cardNumber}
+                  amount={item.amount}
+                  status={item.status}
+                />
+              );
+            })}
+          </div>
+          <Box boxShadow="0px 14.625px 80.4375px -21.9375px rgba(43, 37, 37, 0.12);" borderRadius=" 10.2375px" m={2}>
+            <div className="stat-wrapper">
+              <h2>Statistics</h2>
+              <div className='stat'>
+                {statisticsObj.map((item, i) => {
+                  return (
+                    <StatItem
+                      key={i}
+                      icon={item.icon}
+                      rating={item.rating}
+                      title={item.title}
+                    />
+                  );
+                })}
+              </div>
+            </div>
+          </Box>
         </Box>
       </Box>
 
