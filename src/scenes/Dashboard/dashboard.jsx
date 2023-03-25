@@ -1,10 +1,11 @@
 import React from 'react';
+import { useState } from 'react';
 import { Typography } from '@mui/material';
 import Box from '@mui/material/Box';
 import Header from '../../components/Header';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
-import Select, { SelectChangeEvent } from '@mui/material/Select';
+import Select from '@mui/material/Select';
 import AddIcon from '@mui/icons-material/Add';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
@@ -22,13 +23,6 @@ import Stack from '@mui/material/Stack';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import MarkChatUnreadIcon from '@mui/icons-material/MarkChatUnread';
 
-export const BasicSelect = () => {
-  const [age, setAge] = React.useState('');
-
-  const handleChange = (event) => {
-    setAge(event.target.value);
-  };
-}
 const TransactionItem = ({ icon, title, date, cardNumber, amount, status }) => {
   return (
     <Box
@@ -116,7 +110,12 @@ export const statistics = [
     title: "watchtime"
   },
 ]
-const dashboard = () => {
+const Dashboard = () => {
+  const [age, setAge] = useState("");
+
+  const handleChange = (event) => {
+    setAge(event.target.value);
+  };
 
   return (
     <Box>
@@ -151,8 +150,8 @@ const dashboard = () => {
                   <Select
                     labelId="demo-simple-select-standard-label"
                     id="demo-simple-select-standard"
-                    value={`age`}
-                    onChange="handleChange"
+                    value={age}
+                    onChange={handleChange}
                     label="Age"
                   >
                     <MenuItem value="">
@@ -219,8 +218,8 @@ const dashboard = () => {
                   <Select
                     labelId="demo-simple-select-standard-label"
                     id="demo-simple-select-standard"
-                    value={`age`}
-                    onChange={`handleChange`}
+                    value={age}
+                    onChange={handleChange}
                     label="Age"
                   >
                     <MenuItem value="">
@@ -277,10 +276,7 @@ const dashboard = () => {
         <Box width="75%">
           <Box display="flex" gap="32px">
             <Box width="60%" >
-              <p>hello</p>
-              <p>hello</p>
-              <p>hello</p>
-              <p>hello</p>
+              <p>Line Chart Section</p>
             </Box>
             <Box width="40%" pr="25px">
               <div className="recent-contact-section">
@@ -378,4 +374,4 @@ const dashboard = () => {
   )
 }
 
-export default dashboard
+export default Dashboard
